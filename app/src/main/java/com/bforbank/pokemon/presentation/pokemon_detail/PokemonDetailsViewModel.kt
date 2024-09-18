@@ -27,18 +27,24 @@ class PokemonDetailsViewModel @Inject constructor(
 
     private fun getPokemonDetails(id: Int) {
         viewModelScope.launch {
-            _state.update { it.copy(isLoading = true) }
-            val pokemonDetails = getPokemonById(id)
-            _state.update {
-                it.copy(
-                    isLoading = false,
-                    name = pokemonDetails.name,
-                    picture = pokemonDetails.picture,
-                    order = pokemonDetails.order,
-                    height = pokemonDetails.height,
-                    weight = pokemonDetails.weight
-                )
+            runCatching {
+                _state.update { it.copy(isLoading = true) }
+                getPokemonById(id)
+            }.onSuccess { pokemonDetails ->
+                _state.update {
+                    it.copy(
+                        isLoading = false,
+                        name = pokemonDetails.name,
+                        picture = pokemonDetails.picture,
+                        order = pokemonDetails.order,
+                        height = pokemonDetails.height,
+                        weight = pokemonDetails.weight
+                    )
+                }
             }
+                .onFailure {
+                    _state.update { it.copy(isLoading = false) }
+                }
         }
     }
 }

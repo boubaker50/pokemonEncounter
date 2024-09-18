@@ -2,7 +2,6 @@ package com.bforbank.pokemon.presentation.pokemon_detail.component
 
 import android.util.Log
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -80,6 +79,7 @@ fun PokemonDetailsComponent(state: PokemonDetailsState, innerPadding: PaddingVal
     Column(
         modifier = Modifier
             .padding(innerPadding)
+            .padding(horizontal = 12.dp)
             .fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
@@ -100,29 +100,4 @@ fun PokemonDetailsComponent(state: PokemonDetailsState, innerPadding: PaddingVal
         Text(text = "Weight: ${state.weight}")
         Text(text = "Height: ${state.height}")
     }
-}
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TopBar(
-    name: String,
-    onBackClicked: () -> Unit
-) {
-    TopAppBar(
-        modifier = Modifier.background(Color.White),
-        title = {
-
-        },
-        navigationIcon = {
-            Image(
-                imageVector = Icons.Default.ArrowBack,
-                contentDescription = "Back button",
-                modifier = Modifier
-                    .padding(16.dp)
-                    .clickable {
-                        onBackClicked()
-                    }
-            )
-        }
-    )
 }

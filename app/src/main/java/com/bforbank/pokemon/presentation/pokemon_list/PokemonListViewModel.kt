@@ -1,6 +1,5 @@
 package com.bforbank.pokemon.presentation.pokemon_list
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bforbank.pokemon.domain.use_case.get_pokemons.GetPokemonList
@@ -30,18 +29,23 @@ class PokemonListViewModel @Inject constructor(
         }
     }
 
-    private fun getPokemonList(
+    fun getPokemonList(
         offset: Int
     ) {
         viewModelScope.launch {
-            _state.update { it.copy(isLoading = true) }
-            val pokemonList = pokemonListUseCase(offset)
-            _state.update {
-                it.copy(
-                    pokemonList = it.pokemonList + pokemonList.pokemonList,
-                    isLoading = false,
-                    pokemonCount = pokemonList.pokemonCount
-                )
+            runCatching {
+                _state.update { it.copy(isLoading = true) }
+                pokemonListUseCase(offset)
+            }.onSuccess { pokemonList ->
+                _state.update {
+                    it.copy(
+                        pokemonList = it.pokemonList + pokemonList.pokemonList,
+                        isLoading = false,
+                        pokemonCount = pokemonList.pokemonCount
+                    )
+                }
+            }.onFailure {
+                _state.update { it.copy(isLoading = false) }
             }
         }
     }
