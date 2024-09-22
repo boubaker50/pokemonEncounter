@@ -29,7 +29,7 @@ class PokemonListViewModel @Inject constructor(
         }
     }
 
-    fun getPokemonList(
+    private fun getPokemonList(
         offset: Int
     ) {
         viewModelScope.launch {
