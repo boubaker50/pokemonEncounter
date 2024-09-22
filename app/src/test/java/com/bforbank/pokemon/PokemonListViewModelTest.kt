@@ -3,8 +3,8 @@ package com.bforbank.pokemon
 import com.bforbank.pokemon.domain.model.Pokemon
 import com.bforbank.pokemon.domain.model.PokemonList
 import com.bforbank.pokemon.domain.use_case.get_pokemons.GetPokemonList
-import com.bforbank.pokemon.presentation.pokemon_list.PokemonListEvent
-import com.bforbank.pokemon.presentation.pokemon_list.PokemonListViewModel
+import com.bforbank.pokemon.presentation.pokemonlist.PokemonListEvent
+import com.bforbank.pokemon.presentation.pokemonlist.PokemonListViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import junit.framework.TestCase.assertEquals

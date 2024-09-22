@@ -1,4 +1,4 @@
-package com.bforbank.pokemon.presentation.pokemon_list
+package com.bforbank.pokemon.presentation.pokemonlist
 
 import com.bforbank.pokemon.domain.model.Pokemon
 

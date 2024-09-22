@@ -1,4 +1,4 @@
-package com.bforbank.pokemon.presentation.pokemon_list.component
+package com.bforbank.pokemon.presentation.pokemonlist.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -27,8 +27,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
 import com.bforbank.pokemon.domain.model.Pokemon
-import com.bforbank.pokemon.presentation.pokemon_list.PokemonListEvent
-import com.bforbank.pokemon.presentation.pokemon_list.PokemonListState
+import com.bforbank.pokemon.presentation.pokemonlist.PokemonListEvent
+import com.bforbank.pokemon.presentation.pokemonlist.PokemonListState
 
 @Composable
 fun PokemonListContent(

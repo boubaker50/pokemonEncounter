@@ -1,4 +1,4 @@
-package com.bforbank.pokemon.presentation.pokemon_detail
+package com.bforbank.pokemon.presentation.pokemondetail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

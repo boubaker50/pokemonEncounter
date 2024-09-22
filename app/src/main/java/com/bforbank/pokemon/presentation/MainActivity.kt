@@ -10,8 +10,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.bforbank.pokemon.presentation.pokemon_detail.component.PokemonDetailsScreen
-import com.bforbank.pokemon.presentation.pokemon_list.component.PokemonListScreen
+import com.bforbank.pokemon.presentation.pokemondetail.component.PokemonDetailsScreen
+import com.bforbank.pokemon.presentation.pokemonlist.component.PokemonListScreen
 import com.bforbank.pokemon.presentation.ui.theme.PokemonBforBTheme
 import dagger.hilt.android.AndroidEntryPoint
 

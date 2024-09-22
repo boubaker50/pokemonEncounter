@@ -1,4 +1,4 @@
-package com.bforbank.pokemon.presentation.pokemon_detail.component
+package com.bforbank.pokemon.presentation.pokemondetail.component
 
 import android.util.Log
 import androidx.compose.foundation.Image
@@ -27,8 +27,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
-import com.bforbank.pokemon.presentation.pokemon_detail.PokemonDetailsEvent
-import com.bforbank.pokemon.presentation.pokemon_detail.PokemonDetailsState
+import com.bforbank.pokemon.presentation.pokemondetail.PokemonDetailsEvent
+import com.bforbank.pokemon.presentation.pokemondetail.PokemonDetailsState
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
