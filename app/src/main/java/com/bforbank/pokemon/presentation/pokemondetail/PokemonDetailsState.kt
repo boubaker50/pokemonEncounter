@@ -1,4 +1,4 @@
-package com.bforbank.pokemon.presentation.pokemon_detail
+package com.bforbank.pokemon.presentation.pokemondetail
 
 import com.bforbank.pokemon.common.Constants.EMPTY_STRING
 

@@ -1,27 +1,26 @@
-package com.bforbank.pokemon.presentation.pokemon_detail.component
+package com.bforbank.pokemon.presentation.pokemonlist.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.bforbank.pokemon.presentation.PokemonDetailsRoute
 import com.bforbank.pokemon.presentation.common.ModalLoading
-import com.bforbank.pokemon.presentation.pokemon_detail.PokemonDetailsViewModel
+import com.bforbank.pokemon.presentation.pokemonlist.PokemonListViewModel
 
 @Composable
-fun PokemonDetailsScreen(
+fun PokemonListScreen(
     navController: NavController,
-    id: Int
+    viewModel: PokemonListViewModel = hiltViewModel()
 ) {
-    val viewModel: PokemonDetailsViewModel = hiltViewModel()
     val state by viewModel.state.collectAsState()
-    PokemonDetailsContent(
-        id = id,
+    PokemonListContent(
+        onClick = { id ->
+            navController.navigate(PokemonDetailsRoute(id))
+        },
         state = state,
-        handleEvent = viewModel::handleEvent,
-        onBackClicked = {
-            navController.popBackStack()
-        }
+        handleEvent = viewModel::handleEvent
     )
     if (state.isLoading) {
         ModalLoading()
